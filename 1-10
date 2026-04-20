@@ -1,0 +1,607 @@
+1.
+STEP 1: Go to Desktop (so folder is easy to find)
+cd Desktop
+
+STEP 2: Create a new folder
+mkdir Git_Lab_Experiment1
+
+STEP 3: Go inside that folder
+cd Git_Lab_Experiment1
+
+STEP 4: Start Git in this folder
+git init
+’ now this folder becomes a git repository
+
+STEP 5: Check files
+ls
+ls -a   (shows hidden .git folder)
+
+STEP 6: Set your name and email (only first time)
+git config --global user.name "Meghana"
+git config --global user.email meghana@gmail.com
+
+STEP 7: Create a file
+echo "This is my first Git experiment" > README.txt
+
+STEP 8: Check status
+git status
+’ shows README.txt as untracked
+
+STEP 9: Add file to staging
+git add README.txt
+(or git add .)
+
+STEP 10: Check status again
+git status
+’ shows file ready to commit
+
+STEP 11: Save permanently (commit)
+git commit -m "Initial commit"
+
+STEP 12: Change the file
+echo "Git tracks file changes" >> README.txt
+
+STEP 13: Check status
+git status
+’ shows file modified
+
+STEP 14: Add and commit again
+git add README.txt
+git commit -m "Updated README file"
+
+STEP 15: See all saved versions
+git log
+
+check history -a
+
+goto desktop click folder show the result
+
+2.
+Exp 2: Working with Git Branches
+
+1) Open a folder and create a new folder.
+2) Copy the path of the folder.
+3) Open Git Bash and paste the path using cd command.
+4) git init
+   -> To initialize Git in repository.
+
+5) Create a file using command:
+   notepad file1.txt
+
+6) Notepad opens, type:
+   this is initial content
+
+7) Save and close the notepad.
+
+8) Go to Git Bash and type:
+   git add file1.txt
+
+9) git commit -m "Initial commit"
+
+10) Check current branch:
+    git branch
+    -> Git shows main or master.
+
+11) Create feature branch:
+    git branch feature-branch
+
+12) Switch to feature branch:
+    git checkout feature-branch
+
+13) Modify file in feature branch:
+    notepad file1.txt
+
+14) Type:
+    this is feature branch modification
+
+15) Save and close the file.
+
+16) git add file1.txt
+
+17) git commit -m "Added new feature in feature branch"
+
+18) Switch back to master/main branch:
+    git checkout master
+
+19) Modify file in master branch:
+    notepad file1.txt
+
+20) Type:
+    this is main branch modification
+
+21) git add file1.txt
+
+22) git commit -m "Updated file in master branch"
+
+23) Merge feature branch:
+    git merge feature-branch
+    -> Conflict occurs
+
+24) Right click inside project folder
+    -> Show more options
+    -> Select TortoiseGit
+    -> Resolve
+
+25) Select file1.txt
+    -> Edit conflicts
+
+26) In TortoiseMerge:
+    -> Right click on "mine" (file1-local)
+    -> Select 3rd option (use block from right before left)
+    -> Click Save
+
+27) Close TortoiseMerge.
+
+28) git add file1.txt
+    -> Now conflict will not occur.
+
+29) git status
+
+30) git log
+
+31) Delete feature branch (optional):
+    git branch -d feature-branch
+
+
+3.
+
+Experiment 3: GitHub Repository Creation and Push
+
+Step 1: Configure Git (one time)
+git config --global user.name "Your Name"
+git config --global user.email "your_email@example.com"
+
+Step 2: Create repository on GitHub
+(Login to GitHub → New Repository → Name: git-lab-demo → Public → Create)
+
+Step 3: Clone the GitHub repository
+cd Desktop
+git clone https://github.com/YourUsername/git-lab-demo.git
+cd git-lab-demo
+
+Step 4: Create a local file
+notepad main.py
+
+(Type the following content in main.py)
+print("This file is from local machine")
+
+Save and close the file.
+
+Step 5: Add and commit the file
+git add main.py
+git commit -m "Add main.py file"
+
+Step 6: Push local code to GitHub
+git push -u origin main
+
+Step 7: Modify file on GitHub (online)
+(Edit README.md and add: Updated via GitHub)
+
+Step 8: Pull changes from GitHub
+git pull origin main
+
+Step 9: Verify updates
+git status
+git log
+
+
+4.
+Step 1: Fork the repository on GitHub
+(Login to GitHub → Open git-lab-demo → Click Fork)
+
+Step 2: Clone the forked repository
+cd Desktop
+git clone https://github.com/YourUsername/git-lab-demo.git
+cd git-lab-demo
+
+Step 3: Create a new branch
+git branch feature-update
+git checkout feature-update
+
+Step 4: Modify a file
+notepad main.py
+
+(Add the following line)
+print("Change made in feature branch")
+
+Save and close the file.
+
+Step 5: Add and commit changes
+git add main.py
+git commit -m "Updated file in feature branch"
+
+Step 6: Push feature branch to forked repository
+git push origin feature-update
+
+Step 7: Create Pull Request on GitHub
+(Open GitHub → Pull Requests → New Pull Request → Create Pull Request)
+
+Step 8: Merge Pull Request
+(Click Merge Pull Request → Confirm merge)
+
+Step 9: Update local repository after merge
+git checkout main
+git pull origin main
+
+Step 10: Verify merge
+git status
+git log
+
+5.
+# Step 0: Open Git Bash normally (not Git Bash Here)
+
+# Step 1: Go to user home directory
+cd ~
+
+# Step 2: Create a fresh folder for Experiment 5
+mkdir DevOps_Exp5
+cd DevOps_Exp5
+
+# Step 3: Initialize a new Git repository
+git init
+
+# Step 4: Verify repository is clean
+git status
+
+# Step 5: Create a sample file for versioning
+echo "Git Tagging Experiment" > file1.txt
+
+# Step 6: Add file to staging area
+git add file1.txt
+
+# Step 7: Commit the file
+git commit -m "Initial commit for tagging experiment"
+
+# Step 8: View commit history
+git log --oneline
+
+# Step 9: Create an annotated tag
+git tag -a v1.0 -m "Version 1.0 release"
+
+# Step 10: List all tags
+git tag
+
+# Step 11: View details of the tag
+git show v1.0
+
+# Step 12: create repository and then Add GitHub remote repository
+git remote add origin https://github.com/USERNAME/DevOps_Exp5.git
+
+# Step 13: Push commits to GitHub
+git push origin master
+
+# Step 14: Push the tag to GitHub
+git push origin v1.0
+
+# Step 15: (Optional) Push all tags
+git push --tags
+
+# Step 16: Create GitHub Release using browser
+# Go to GitHub → Repository → Releases → Create new release
+# Select tag v1.0 → Add title & description → Publish release
+
+6.
+# EXPERIMENT–6 : MAVEN
+
+# Step 1: Open Command Prompt
+# Step 2: Check Java installation
+java --version
+
+# Step 3: Check Maven installation
+mvn --version
+
+# Step 4: Create a new folder in Desktop named project
+cd %USERPROFILE%\Desktop
+mkdir project
+cd project
+
+# Step 5: Create a folder inside it named maven-project
+mkdir maven-project
+cd maven-project
+
+# Step 6: Generate Maven project
+mvn archetype:generate
+
+# Step 7: Choose a number you will get, type 2309
+# Step 8: Choose a number: 9 (choose latest version)
+
+# Step 9: Define value for property groupId
+org.bnm
+# or
+com.google
+
+# Step 10: Define value for property artifactId
+maven-demo
+
+# Step 11: Define value for property version
+1.0-SNAPSHOT
+
+# Step 12: Define value for property package
+org.bnm.demo
+
+# Step 13: Type Y and press Enter
+Y
+
+# Step 14: Go back to the folder you have created
+cd maven-demo
+
+# Step 15: Check project structure
+dir
+
+# Step 16: Open src/main/java/org/bnm/demo/App.java
+# Replace code with ANY ONE program below
+
+# ---------------- PROGRAM 1: HELLO WORLD ----------------
+package org.bnm.demo;
+
+public class App {
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
+}
+
+# ---------------- PROGRAM 2: LENGTH OF STRING ----------------
+package org.bnm.demo;
+
+public class App {
+    public static void main(String[] args) {
+        String s = "DevOps";
+        System.out.println("Length of string: " + s.length());
+    }
+}
+
+# ---------------- PROGRAM 3: AREA OF SQUARE ----------------
+package org.bnm.demo;
+
+public class App {
+    public static void main(String[] args) {
+        int side = 5;
+        int area = side * side;
+        System.out.println("Area of square: " + area);
+    }
+}
+
+# ---------------- PROGRAM 4: EVEN OR ODD ----------------
+package org.bnm.demo;
+
+public class App {
+    public static void main(String[] args) {
+        int n = 10;
+        if (n % 2 == 0)
+            System.out.println("Even number");
+        else
+            System.out.println("Odd number");
+    }
+}
+
+# ---------------- PROGRAM 5: SIMPLE INTEREST ----------------
+package org.bnm.demo;
+
+public class App {
+    public static void main(String[] args) {
+        int p = 1000, t = 2, r = 5;
+        int si = (p * t * r) / 100;
+        System.out.println("Simple Interest: " + si);
+    }
+}
+
+# Step 17: Go back to maven-demo folder
+cd maven-demo
+
+# Step 18: Build the project
+mvn clean package
+
+# Step 19: Go to target folder
+cd target
+
+# Step 20: Verify JAR file
+dir
+# Output: maven-demo-1.0-SNAPSHOT.jar
+
+
+7.
+goto jenkins ->item->freestyle->ok
+description freestyle project->old built ->3   3 ->add build step ->executive window batch command
+echo "this is my first frestyle project"
+save->built
+
+8.
+goto jenkins->item->freestyle->ok
+description ->build trigger->discard old build ->3 1->git
+goto github copy exp8->copy url and paste genkins git
+ change master to main
+click github hook trigger for gitscm polling
+poll SCM  * * * * *
+build steps->execute window batch 
+javac BankService.java
+java BankService      apply save ->build->  github ->change the value and show
+
+
+9.
+DevOps Experiment - 09
+
+Steps:
+
+STEP 1: Open Jenkins dashboard
+Open browser and go to http://localhost:8080
+Login to Jenkins
+
+STEP 2: Create a new pipeline job
+Click New Item
+Enter job name: Exp9_Pipeline
+Select Pipeline
+Click OK
+
+STEP 3: Configure pipeline script
+Scroll to Pipeline section
+Select Definition → Pipeline script
+
+STEP 4: Enter Build and Test pipeline script
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building the project'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing the project'
+            }
+        }
+    }
+}
+
+STEP 5: Save and execute pipeline
+Click Save
+Click Build Now
+
+STEP 6: Modify pipeline to Hello World
+Click Configure → Pipeline section
+pipeline {
+    agent any
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World from Jenkins Pipeline'
+            }
+        }
+    }
+}
+
+STEP 7: Save and execute Hello World pipeline
+Click Save
+Click Build Now
+Check Console Output for Hello World message
+
+STEP 8: Modify pipeline to add two numbers
+Click Configure → Pipeline section
+pipeline {
+    agent any
+    stages {
+        stage('Addition') {
+            steps {
+                script {
+                    int a = 10
+                    int b = 20
+                    int sum = a + b
+                    echo "Addition of ${a} and ${b} is ${sum}"
+                }
+            }
+        }
+    }
+}
+
+STEP 9: Save and execute addition pipeline
+Click Save
+Click Build Now
+Verify addition result in Console Output
+
+10.
+DevOps Experiment - 10
+
+Steps:
+
+STEP 1: Create a new pipeline job
+Open Jenkins dashboard
+Click New Item
+Enter job name: Exp10_Visualization
+Select Pipeline
+Click OK
+
+STEP 2: Configure pipeline script
+Scroll to Pipeline section
+Select Definition → Pipeline script
+
+STEP 3: Enter Build and Test pipeline script
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Build stage executing'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Test stage executing'
+            }
+        }
+    }
+}
+
+STEP 4: Save and run pipeline
+Click Save
+Click Build Now
+
+STEP 5: View pipeline execution graph
+Click job name
+Click Stage View
+Observe Build and Test stages shown in pipeline graph
+
+STEP 6: View console logs
+Click build number
+Click Console Output
+Analyze log messages of each stage
+
+STEP 7: Modify pipeline to Hello World
+Click Configure → Pipeline section
+pipeline {
+    agent any
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World from Jenkins'
+            }
+        }
+    }
+}
+
+STEP 8: Save and run Hello World pipeline
+Click Save
+Click Build Now
+Check Console Output
+
+STEP 9: Modify pipeline to addition with failure
+Click Configure → Pipeline section
+pipeline {
+    agent any
+    stages {
+        stage('Addition') {
+            steps {
+                script {
+                    int x = 5
+                    int y = 7
+                    echo "Sum = ${x + y}"
+                }
+            }
+        }
+        stage('Test') {
+            steps {
+                error 'Addition test failed'
+            }
+        }
+    }
+}
+
+STEP 10: Save and run pipeline
+Click Save
+Click Build Now
+
+STEP 11: Analyze failure using graph and logs
+Open Stage View → observe failed stage in RED
+Open Console Output → identify error message
+
+STEP 12: Fix the error
+Remove error statement->echo 'Addition test successfull'
+Save pipeline
+Build again successfully
+
+U shld redownload  pipeline view stage
+Even though it's 100 re download it u'll get
+
+
+
+
+history -a
