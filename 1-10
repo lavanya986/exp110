@@ -600,8 +600,121 @@ Build again successfully
 
 U shld redownload  pipeline view stage
 Even though it's 100 re download it u'll get
-
-
-
-
 history -a
+
+
+11.
+goto elipse IDE ->new->projectname->Addition->next->finish
+src->new->class->package->additionexample
+name->Addition->finish
+
+public int add (int a, int b){
+       return a + b;
+    }
+}
+
+save
+right click left side Addition->built path->add libraris->junit->next->junit5->finish
+
+left side junit5 click it shown
+click src->new->junit test case ->nameAdditionExampleTest->finish
+
+change the code 
+
+public void testAdd(){
+   Addition1 add1 = new Addition1();
+   int ExpectedResult =4;
+   int actualResult = add1.add(2.2);
+   assertEqual (ExpectedResult,actualResult);
+
+check Addition1.java above title 
+
+public int add(int a, int b){
+   return a+b;
+}
+}
+
+left side click ->run the code click right side runas->junit test
+
+after add code 
+
+public void testAdd1(){
+   Addition1 add1 = new Addition1();
+   int ExpectedResult =10;
+   int actualResult = add1.add(3.7);
+   assertEqual (ExpectedResult,actualResult);
+}
+}
+
+Addition .java change return a * b;
+right click test unit
+
+12.
+mvn --version
+mvn archetype:generate
+
+g.id:com.bnmit->a.id:sample-app->enter->com.bnmit->y
+
+goto folder sample-app->src change the code Calculator and CalculatorTest
+
+cmd
+
+cd Desktop ->cd sample-app
+mvn test
+
+calculation 
+package additionexample;
+
+public class Calculation {
+
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    public int subtract(int a, int b) {
+        return a - b;
+    }
+
+    public int multiply(int a, int b) {
+        return a * b;
+    }
+
+    public int divide(int a, int b) {
+        return a / b;
+    }
+}
+
+
+calculation test
+
+package additionexample;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
+
+public class CalculationTest {
+
+    Calculation calc = new Calculation();
+
+    @Test
+    public void testAdd() {
+        assertEquals(5, calc.add(2, 3));
+    }
+
+    @Test
+    public void testSubtract() {
+        assertEquals(1, calc.subtract(3, 2));
+    }
+
+    @Test
+    public void testMultiply() {
+        assertEquals(6, calc.multiply(2, 3));
+    }
+
+    @Test
+    public void testDivide() {
+        assertEquals(2, calc.divide(4, 2));
+    }
+}
+
+click Addition1.java 
